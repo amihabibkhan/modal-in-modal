@@ -1,0 +1,79 @@
+<button type="button" class="btn btn-pill-left btn-lg btn-primary" data-toggle="modal"
+                                        data-target="#addService">Add Service
+                                </button>
+                                <div id="addService" class="modal fade text-left" role="dialog" style="z-index: 1400;">
+                                    <div class="modal-dialog">
+                                        <!-- Modal content-->
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h4 class="modal-title">Add a New Service</h4>
+                                                <button type="button" class="close" data-dismiss="modal"
+                                                        aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span>
+                                                </button>
+                                            </div>
+                                            <form action="{{ route('admin.addSchedule') }}" method="post">
+                                                @csrf
+                                                <div class="modal-body">
+                                                    <div class="form-group">
+                                                        <label for="">Service Title</label>
+                                                        <input type="text" name="day" value="{{ old('day') }}"
+                                                               class="form-control"
+                                                               placeholder="Write here Service title">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="">Service Short Description</label>
+                                                        <textarea name="day" class="form-control"
+                                                                  placeholder="Write a Short Description of this Service">{{ old('day') }}</textarea>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="">Set an Icon for this service</label><br>
+                                                        <button type="button" class="btn btn-info" data-toggle="modal"
+                                                                data-target="#selectIcon">Select an Icon
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="submit" class="btn btn-primary">Add Service</button>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                                {{-- icon list modal start --}}
+                                <div id="selectIcon" class="modal fade" role="dialog" style="z-index: 1600;">
+                                    <div class="modal-dialog modal-lg">
+                                        <!-- Modal content-->
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h4 class="modal-title">Select an icon from the list</h4>
+                                                <button type="button" class="close" data-dismiss="modal"
+                                                        aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span>
+                                                </button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <table class="table table-hover">
+                                                    <tr>
+                                                        <th>Hello world</th>
+                                                        <th>Hello world</th>
+                                                        <th>Hello world</th>
+                                                        <th>Hello world</th>
+                                                        <th>Hello world</th>
+                                                    </tr>
+                                                    <tr>
+                                                        <td> karim Vai</td>
+                                                        <td> karim Vai</td>
+                                                        <td> karim Vai</td>
+                                                        <td> karim Vai</td>
+                                                        <td> karim Vai</td>
+                                                    </tr>
+                                                </table>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="submit" class="btn btn-primary">Add Service Icon</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                {{-- icon list modal end --}}
